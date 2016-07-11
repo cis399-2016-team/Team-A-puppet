@@ -6,10 +6,6 @@ node ip-10-0-3-232 {
 	}
 }
 
-node ip-10-0-3-70 {
-	include "sshd"
-}
-
 node ip-10-0-3-185 {
 	include "sshd"
 }
