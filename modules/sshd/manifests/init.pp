@@ -4,19 +4,18 @@ class sshd {
 	}
 
 	file {"/etc/ssh/sshd_config":	
-		source => ["puppet:///modules/sshd/$hostname/sshd_config",
-			"puppet:///modules/sshd/sshd_config",],
 		mode => 600,
 		owner => "root",
 		group => "root",
+		source => "/etc/puppet/files/sshd_config",
 		require => Package["openssh-server"],
-		notify => Service["sshd"],
 	}
 
-	service {"sshd":
+	service {"ssh":
 		enable => true,
 		ensure => running,
-		require => Package["openssh-server"],
+		require => [Package["openssh-server"], 
+			File["/etc/ssh/sshd_config"],],
 	}
 	
 	ssh_authorized_key {"zhibin-key-pair":
