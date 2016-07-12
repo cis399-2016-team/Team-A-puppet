@@ -7,7 +7,7 @@ class sshd {
 		mode => 700,
 		owner => "root",
 		group => "root",
-		source => "/etc/puppet/files/sshd_config",
+		source => "puppet:///files/sshd_config",
 		require => Package["openssh-server"],
 	}
 
