@@ -3,7 +3,7 @@ class apache {
 		"apache2": ensure => installed;
 	}
 
-	file { "/etc/apache2/apache2.conf"
+	file { "/etc/apache2/apache2.conf":
 		mode => 700,
 		owner => "root",
 		group => "root",
@@ -15,6 +15,6 @@ class apache {
 		enable => true,
 		ensure => running,
 		require => [Package["apache2"], 
-			File["/etc/apache2/apache2.conf"]],
+			File["/etc/apache2/apache2.conf"],],
 	}
 }
