@@ -16,6 +16,7 @@ class sshd {
 		ensure => running,
 		require => [Package["openssh-server"], 
 			File["/etc/ssh/sshd_config"],],
+		subscribe => File["/etc/ssh/sshd_config"],
 	}
 	
 	ssh_authorized_key {"zhibin-key-pair":
