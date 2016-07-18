@@ -18,7 +18,7 @@ class apache {
 		group => root,
 	}
 
-	file { "/var/www/html/foo.html"
+	file { "/var/www/html/foo.html":
 		mode => 644,
 		owner => root,
 		group => root,
