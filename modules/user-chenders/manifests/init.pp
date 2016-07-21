@@ -1,7 +1,7 @@
 class user-chenders {
 
 	macro-useradd { "chenders":
-		name => "Christopher A Henderson",
+		name => "chenders",
 		uid => 1002,
 		groups => [],
 		sshkeytype => "ssh-rsa",
