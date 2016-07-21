@@ -1,4 +1,4 @@
-class groups { "sysadmin"
+class groups { "sysadmin":
 	ensure => present,
 	gid => 500,
 }
