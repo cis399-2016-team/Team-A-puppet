@@ -16,4 +16,5 @@ node ip-10-0-3-42 {
 		include sshd
 		include apache
 		include user-stevev
+		include user-chenders
 }
