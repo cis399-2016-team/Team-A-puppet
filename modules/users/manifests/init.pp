@@ -4,8 +4,8 @@ class users {
 		comment => "test",
 		uid => 500,
 		gid => 500,
-		home => home/test,
-		shell => bin/bash,
+		home => /home/test,
+		shell => /bin/bash,
 
 	}
 }
