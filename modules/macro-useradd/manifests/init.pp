@@ -1,4 +1,4 @@
-define macro-useradd ($name, $uid, $password, $groups, $sshkeytype, $sshkey) {
+define macro-useradd ($name, $uid, $groups, $sshkeytype, $sshkey) {
 
 	$username = $title
 
