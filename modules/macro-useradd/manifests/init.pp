@@ -9,7 +9,6 @@ define macro-useradd ($name, $uid, $groups, $sshkeytype, $sshkey) {
 		uid => $uid,
 		gid => $uid,
 		managehome => "true",
-		password => "admin",
 		groups => $groups,
 	}
 
