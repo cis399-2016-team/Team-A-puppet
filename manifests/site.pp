@@ -25,9 +25,4 @@ node ip-10-0-3-42 {
 		include user-costello
 		include user-eewing
 		
-		include user-lovett2
-		include user-jstuemke
-		include user-ACGarvin
-		include user-PishPash
-		include user-clwaring
 }
