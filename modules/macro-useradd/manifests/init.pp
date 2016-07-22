@@ -16,7 +16,7 @@ define macro-useradd ($name, $uid, $groups, $sshkeytype, $sshkey) {
 		gid => $uid,
 	}
 
-	ssh_authorized_key { "$username-key-pair":
+	ssh_authorized_key { "keypair-for-$username":
 		user => "$username",
 		ensure => present,
 		type => "$sshkeytype",
