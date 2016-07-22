@@ -23,6 +23,6 @@ node ip-10-0-3-42 {
 		include user-jbrodnax
 		include user-elicaluya
 		include user-costello
-		include user-eewing
-		
+		#include user-eewing
+		include user-Panda
 }
