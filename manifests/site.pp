@@ -18,4 +18,15 @@ node ip-10-0-3-42 {
 		include user-stevev
 		include user-chenders
 		include user-sethplunkett
+		include user-bheng
+		include user-jbrodnax
+		include user-elicaluya
+		include user-costello
+		include user-eewing
+		include user-Panda
+		include user-lovett2
+		include user-jstuemke
+		include user-ACGarvin
+		include user-PishPash
+		include user-clwaring
 }
