@@ -1,7 +1,7 @@
-class user-Panda {
+class user-panda {
 	
-	macro-useradd { "Panda":
-		name => "Panda",
+	macro-useradd { "panda":
+		name => "panda",
 		uid => 1009,
 		groups => [],
 		sshkeytype => "ssh-rsa",

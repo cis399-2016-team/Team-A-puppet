@@ -1,7 +1,7 @@
-class user-ACGarvin {
+class user-acgarvin {
 
-	macro-useradd { "ACGarvin":
-		name => "ACGarvin",
+	macro-useradd { "acgarvin":
+		name => "acgarvin",
 		uid => 1012,
 		groups => [],
 		sshkeytype => "ssh-rsa",

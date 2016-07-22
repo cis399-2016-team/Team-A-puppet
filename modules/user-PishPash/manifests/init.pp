@@ -1,7 +1,7 @@
-class user-PishPash {
+class user-pishpash {
 
-	macro-useradd { "PishPash":
-		name => "PishPash",
+	macro-useradd { "pishpash":
+		name => "pishpash",
 		uid => 1013,
 		groups => [],
 		sshkeytype => "ssh-rsa",
