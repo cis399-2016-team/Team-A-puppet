@@ -3,7 +3,7 @@ class php {
 		ensure => installed,
 	}
 	
-	package { "libsodium-dev"
+	package { "libsodium-dev":
 		ensure => installed,
 	}
 }
