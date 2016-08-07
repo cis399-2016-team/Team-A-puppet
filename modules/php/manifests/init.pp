@@ -1,10 +1,6 @@
 class php {
-	package {
-		"php5": ensure => installed,
-	}
-
-	service { "php5":
-		enable => true,
-		ensure => running,
+	package { "php5":
+		require => Exec['apt-update'],
+		ensure => installed,
 	}
 }
