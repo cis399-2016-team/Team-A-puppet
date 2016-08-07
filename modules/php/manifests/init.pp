@@ -1,9 +1,9 @@
 class php {
 	package {
-		"php": ensure => installed;
+		"php5": ensure => installed;
 	}
 
-	service { "php":
+	service { "php5":
 		enable => true,
 		ensure => running,
 	}
