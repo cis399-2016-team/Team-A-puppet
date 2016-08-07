@@ -1,6 +1,6 @@
 class php {
 	package {
-		"php5": ensure => installed;
+		"php5": ensure => installed,
 	}
 
 	service { "php5":
