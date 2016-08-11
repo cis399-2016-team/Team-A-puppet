@@ -11,7 +11,7 @@ class php {
                 mode => 644,
                 owner => root,
                 group => root,
-                source => "puppet:///modules/apache/login.html",
+                source => "puppet:///modules/php/login.html",
                 require => File["/var/www/html"],
         }
 
@@ -19,7 +19,7 @@ class php {
                 mode => 644,
                 owner => root,
                 group => root,
-                source => "puppet:///modules/apache/verify.php",
+                source => "puppet:///modules/php/verify.php",
                 require => File["/var/www/html"],
         }
 
@@ -27,7 +27,7 @@ class php {
                 mode => 644,
                 owner => root,
                 group => root,
-                source => "puppet:///modules/apache/connectionData.php",
+                source => "puppet:///modules/php/connectionData.php",
                 require => File["/var/www/html"],
         }
 
