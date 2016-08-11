@@ -6,4 +6,28 @@ class php {
 	package { "libsodium-dev":
 		ensure => installed,
 	}
+
+	file { "/var/www/html":
+                ensure => directory,
+                recurse => true,
+                owner => root,
+                group => root,
+        }
+
+        file { "/var/www/html/login.php":
+                mode => 644,
+                owner => root,
+                group => root,
+                source => "puppet:///modules/apache/login.php",
+                require => File["/var/www/html"],
+        }
+
+        file { "/var/www/html/verify.php":
+                mode => 644,
+                owner => root,
+                group => root,
+                source => "puppet:///modules/apache/verify.php",
+                require => File["/var/www/html"],
+        }
+
 }
