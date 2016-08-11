@@ -4,7 +4,7 @@ include('connectionData.txt');
 $password = $_POST['password'];
 $name = $_POST['username'];
 
-$conn = new mysqli($server, $user, $pass, $dbname)
+$conn = new mysqli($server, $user, $pass, $dbname);
 
 if ($conn->connect_error) {
 	die("Could not connect to Database");
