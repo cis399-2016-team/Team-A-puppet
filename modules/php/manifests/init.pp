@@ -7,13 +7,6 @@ class php {
 		ensure => installed,
 	}
 
-	file { "/var/www/html":
-                ensure => directory,
-                recurse => true,
-                owner => root,
-                group => root,
-        }
-
         file { "/var/www/html/login.html":
                 mode => 644,
                 owner => root,
