@@ -28,6 +28,7 @@ class php {
         }
 
 	file {"/var/www/html/phpass-0.3":
+		ensure => 'directory',
 		mode => 644,
 		recurse => true,
 		owner => root,
@@ -52,11 +53,11 @@ class php {
 	}
 
 	file {"/var/www/html/phpass-0.3/c":
+		ensure => 'directory',
 		mode => 644,
 		recurse => true,
 		owner => root,
 		group => root,
-		require => File["/var/www/html"],
 		require => File["/var/www/html/phpass-0.3"],
 	}
 
