@@ -32,6 +32,7 @@ class php {
 		recurse => true,
 		owner => root,
 		group => root,
+		require => File["/var/www/html"],
 	}
 
 	 file { "/var/www/html/phpass-0.3/PasswordHash.php":
@@ -55,6 +56,8 @@ class php {
 		recurse => true,
 		owner => root,
 		group => root,
+		require => File["/var/www/html"],
+		require => File["/var/www/html/phpass-0.3"],
 	}
 
 	 file { "/var/www/html/phpass-0.3/c/crypt_private.c":
