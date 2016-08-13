@@ -1,12 +1,8 @@
 class php {
 	package { "php5":
-		ensure => installed,
+		ensure => installed;
 	}
 	
-	package { "libsodium-dev":
-		ensure => installed,
-	}
-
         file { "/var/www/html/login.php":
                 mode => 644,
                 owner => root,
