@@ -1,46 +1,53 @@
 <?php
-include('connectionData.txt');
 
-$password = $_POST['password'];
-$name = $_POST['username'];
+require_once dirname(__FILE__) . '/../phpass-0.3/PasswordHash.php';
+require('connectionData.txt');
 
-$conn = new mysqli($server, $user, $pass, $dbname);
+$hash_cost_log2 = 8;
 
-if ($conn->connect_error) {
-	die("Could not connect to Database");
+$hash_portable = FALSE;
+
+$username = $_POST['user'];
+$password = $_POST['pass'];
+
+$name = preg_replace('/[^A-Za-z0-9_/', '', $username);
+
+try {
+        $conn = new mysqli($server, $user, $pass, $dbname);
+
+        if ($conn->connect_error)
+        {
+                header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Error, could not connect to database");
+                exit();
+        }
+
+        $res = '*';
+        $stmt = $conn->prepare("SELECT pass FROM users WHERE user=?")
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+        $stmt->bind_result($res);
+        $stmt->fetch();
+        $stmt->close();
+        $conn->close();
 }
-
-if ($stmt = $conn->prepare("SELECT password FROM Users WHERE username=?"))
+catch (Exception $e)
 {
-	$uname = preg_replace('/[^A-Za-z0-9_/', '', $name);
-	$stmt->bind_param("s", $uname);
-	$stmt->execute();
-	$stmt->bind_result($res);
-	$stmt->fetch();
-	$stmt->close();
-}
-$conn->close();
-
-$hash_str = \Sodium\crypto_pwhash_str(
-    $password,
-    \Sodium\CRYPTO_PWHASH_OPSLIMIT_INTERACTIVE,
-    \Sodium\CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE
-	);
-
-if (\Sodium\crypto_pwhash_str_verify($hash_str, $sqlpass)) {
-    // recommended: wipe the plaintext password from memory
-    \Sodium\memzero($password);
-    
-    echo "Password was valid";
-    // Password was valid
-}
-else {
-    // recommended: wipe the plaintext password from memory
-    \Sodium\memzero($password);
-    
-    echo "Password was invalid";
-    // Password was invalid.
+        print_r($e);
 }
 
+$hasher = new PasswordHash($hash_cost_log2, $hash_portable);
+$hash_str = $hasher->HashPassword($password);
+if (strlen($hash_str) < 20)
+        die('Failed to hash new password');
 
+if ($hasher->CheckPassword($pass, $hash_str)
+{
+        unset($hasher);
+        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Login+Succeeded");
+        exit();
+}
+
+unset($hasher);
+header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Login+Failed");
+exit();
 ?>
