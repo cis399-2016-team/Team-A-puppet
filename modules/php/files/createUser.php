@@ -57,7 +57,7 @@ try {
 
         header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Your+account+was+successfully+created.");
 }
-(Exception $e)
+catch (Exception $e)
 {
         print_r($e);
 }
