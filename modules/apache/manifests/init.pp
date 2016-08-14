@@ -54,7 +54,7 @@ class apache {
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet///modules/apache/resources.tar",
+		source => "puppet:///modules/apache/resources.tar",
 		require => File["/var/www/html"],
 		before => Exec["untar"],
 	}
