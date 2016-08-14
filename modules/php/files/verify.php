@@ -37,8 +37,6 @@ catch (Exception $e)
 }
 
 $hasher = new PasswordHash($hash_cost_log2, $hash_portable);
-if (strlen($hash_str) < 20)
-        die('Failed to hash new password');
 
 if ($hasher->CheckPassword($pass, $res))
 {
