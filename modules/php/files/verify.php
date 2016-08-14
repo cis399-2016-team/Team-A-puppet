@@ -3,15 +3,18 @@
 require_once dirname(__FILE__) . '/phpass-0.3/PasswordHash.php';
 require_once '/var/www/connectionData.php';
 
-
 $hash_cost_log2 = 8;
 
 $hash_portable = FALSE;
 
-$username = $_POST['user'];
-$password = $_POST['pass'];
+$username = $argv[1];
+$password = $argv[2];
+
+//$username = $_POST['user'];
+//$password = $_POST['pass'];
 
 $name = preg_replace('/[^A-Za-z0-9_/', '', $username);
+$res = '*';
 
 try {
         $conn = new mysqli($server, $user, $pass, $dbname);
@@ -22,7 +25,6 @@ try {
                 exit();
         }
 
-        $res = '*';
         $stmt = $conn->prepare("SELECT pass FROM users WHERE user=?")
         $stmt->bind_param("s", $name);
         $stmt->execute();
