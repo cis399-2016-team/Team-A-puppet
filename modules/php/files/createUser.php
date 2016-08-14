@@ -10,11 +10,6 @@ $hash_portable = FALSE;
 $username = $_POST['user'];
 $password = $_POST['pass'];
 
-if (count($argv) == 3)
-{
-	$username = $argv[1];
-	$password = $argv[2];
-}
 
 if (strlen($password) < 10)
 {
