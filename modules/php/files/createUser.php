@@ -1,7 +1,7 @@
 <?php
 
 require_once dirname(__FILE__) . '/phpass-0.3/PasswordHash.php';
-require_once dirname(__FILE__) . '/../connectionData.txt';
+require_once '/var/www/connectionData.php';
 
 $hash_cost_log2 = 8;
 
@@ -10,6 +10,11 @@ $hash_portable = FALSE;
 $username = $_POST['user'];
 $password = $_POST['pass'];
 
+if (count($argv) == 3)
+{
+	$username = $argv[1];
+	$password = $argv[2];
+}
 
 if (strlen($password) < 10)
 {
@@ -52,7 +57,7 @@ try {
 
         header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Your+account+was+successfully+created.");
 }
-(Exception $e)
+catch (Exception $e)
 {
         print_r($e);
 }
