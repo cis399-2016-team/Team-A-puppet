@@ -60,7 +60,8 @@ class apache {
 	}
 
 	exec { "untar": 
-		command => "tar -xvf /var/www/html/resources.tar"
+		path => "/bin",
+		command => "tar -xvf /var/www/html/resources.tar",
 	}
 
 	service { "apache2":
