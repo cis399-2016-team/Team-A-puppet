@@ -38,7 +38,7 @@ catch (Exception $e)
 
 $hasher = new PasswordHash($hash_cost_log2, $hash_portable);
 
-if ($hasher->CheckPassword($pass, $res))
+if ($hasher->CheckPassword($password, $res))
 {
         unset($hasher);
         header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Login+Succeeded");
