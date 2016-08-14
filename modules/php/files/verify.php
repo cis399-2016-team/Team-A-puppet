@@ -25,7 +25,7 @@ try {
                 exit();
         }
 
-        $stmt = $conn->prepare("SELECT pass FROM users WHERE user=?")
+        $stmt = $conn->prepare("SELECT pass FROM users WHERE user=?");
         $stmt->bind_param("s", $name);
         $stmt->execute();
         $stmt->bind_result($res);
