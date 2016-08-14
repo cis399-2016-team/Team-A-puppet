@@ -26,6 +26,20 @@ class apache {
 		require => File["/var/www/html"],
 	}
 
+	file { "/etc/apache2/ssl/apache.crt": 
+		mode => 644,
+		owner => root,
+		group => root,
+		ensure => present,
+	}
+
+	file { "/etc/apache2/ssl/apache.key": 
+		mode => 644,
+		owner => root,
+		gorup => root,
+		ensure => present,
+	}
+
 	file { "/etc/apache2/sites-available/default-ssl.conf":
 		mode => 644,
 		owner => root,
