@@ -30,7 +30,7 @@ class apache {
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet://modules/apache/default-ssl.conf",
+		source => "puppet:///modules/apache/default-ssl.conf",
 	}
 
 	service { "apache2":
