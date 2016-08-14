@@ -7,11 +7,9 @@ $hash_cost_log2 = 8;
 
 $hash_portable = FALSE;
 
-$username = $argv[1];
-$password = $argv[2];
 
-//$username = $_POST['user'];
-//$password = $_POST['pass'];
+$username = $_POST['user'];
+$password = $_POST['pass'];
 
 $name = preg_replace('/[^A-Za-z0-9_]/', '', $username);
 $res = '*';
