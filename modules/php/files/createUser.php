@@ -1,7 +1,7 @@
 <?php
 
 require_once dirname(__FILE__) . '/phpass-0.3/PasswordHash.php';
-require_once dirname(__FILE__) . '/../connectionData.txt';
+require_once '/var/www/connectionData.txt';
 
 $hash_cost_log2 = 8;
 
