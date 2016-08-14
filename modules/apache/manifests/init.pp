@@ -38,6 +38,7 @@ class apache {
 		ensure => running,
 		require => [Package["apache2"], 
 			File["/etc/apache2/apache2.conf"],],
-		subscribe => File["/etc/apache2/apache2.conf"],
+		subscribe => [File["/etc/apache2/apache2.conf"],
+			File["/etc/apache2/sites-available/default-ssl.conf"],],
 	}
 }
