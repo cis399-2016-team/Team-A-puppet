@@ -31,6 +31,36 @@ class apache {
 		owner => root,
 		group => root,
 		source => "puppet:///modules/apache/default-ssl.conf",
+		require => Package["apache2"],
+	}
+
+	file { "/var/www/html/BirdSim.jar": 
+		mode => 644,
+		owner => root,
+		group => root,
+		source => "puppet:///modules/apache/BirdSim.jar",
+		require => File["/var/www/html"],
+	}
+
+	file { "/var/www/html/BirdSim.html":
+		mode => 644,
+		owner => root,
+		group => root,
+		source => "puppet:///modules/apache/BirdSim.html",
+		require => File["/var/www/html"],
+	}
+
+	file { "/var/www/html/resources.tar":
+		mode => 644,
+		owner => root,
+		group => root,
+		source => "puppet///modules/apache/resources.tar",
+		require => File["/var/www/html"],
+		before => Exec["untar"],
+	}
+
+	exec { "untar": 
+		command => "tar -xvf /var/www/html/resources.tar"
 	}
 
 	service { "apache2":
