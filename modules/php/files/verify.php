@@ -43,7 +43,7 @@ $hash_str = $hasher->HashPassword($password);
 if (strlen($hash_str) < 20)
         die('Failed to hash new password');
 
-if ($hasher->CheckPassword($pass, $hash_str)
+if ($hasher->CheckPassword($pass, $hash_str))
 {
         unset($hasher);
         header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Login+Succeeded");
