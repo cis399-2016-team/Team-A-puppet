@@ -13,7 +13,7 @@ $password = $argv[2];
 //$username = $_POST['user'];
 //$password = $_POST['pass'];
 
-$name = preg_replace('/[^A-Za-z0-9_/', '', $username);
+$name = preg_replace('/[^A-Za-z0-9_]/', '', $username);
 $res = '*';
 
 try {
