@@ -21,7 +21,7 @@ try {
 
         if ($conn->connect_error)
         {
-                header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Error, could not connect to database");
+                header("Location: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Error, could not connect to database");
                 exit();
         }
 
@@ -45,11 +45,11 @@ if ($hasher->CheckPassword($password, $res))
        unset($hasher);
 	$_SESSION['valid'] = true;
 	$_SESSION['timeout'] = time();
-        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/BirdSim.html");
+        header("Location: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/BirdSim.php");
         exit();
 }
 
 unset($hasher);
-header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Login+Failed");
+header("Location: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Login+Failed");
 exit();
 ?>

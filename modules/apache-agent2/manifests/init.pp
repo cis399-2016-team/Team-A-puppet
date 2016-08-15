@@ -42,11 +42,11 @@ class apache-agent2 {
 		require => File["/var/www/html"],
 	}
 
-	file { "/var/www/html/BirdSim.html":
+	file { "/var/www/html/BirdSim.php":
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet:///modules/apache-agent2/BirdSim.html",
+		source => "puppet:///modules/apache-agent2/BirdSim.php",
 		require => File["/var/www/html"],
 	}
 

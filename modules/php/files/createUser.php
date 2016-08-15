@@ -13,13 +13,13 @@ $password2 = $_POST['pass2'];
 
 if (strcmp($password, $password2) != 0)
 {
-        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Error password reentry did not match");
+        header("Location: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Error password reentry did not match");
         exit();
 }
 
 if (strlen($password) < 10)
 {
-        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Please+use+a+password+with+a+minimum+length+of+10+characters");
+        header("Location: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Please+use+a+password+with+a+minimum+length+of+10+characters");
         exit();
 }
 
@@ -29,7 +29,7 @@ try {
 
         if ($conn->connect_error)
         {
-                header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Error, could not connect to database");
+                header("Location: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Error, could not connect to database");
                 exit();
         }
 
@@ -43,7 +43,7 @@ try {
 
         if ($stmt === false)
         {
-                header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Failed+to+create+account,+please+try+a+different+username");
+                header("Location: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Failed+to+create+account,+please+try+a+different+username");
                 exit();
         }
 
@@ -56,7 +56,7 @@ try {
         $stmt->close();
         $conn->close();
 
-        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Your+account+was+successfully+created.");
+        header("Location: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Your+account+was+successfully+created.");
 }
 catch (Exception $e)
 {
