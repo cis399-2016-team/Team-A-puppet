@@ -3,6 +3,8 @@
 require_once dirname(__FILE__) . '/phpass-0.3/PasswordHash.php';
 require_once '/var/www/connectionData.php';
 
+session_start();
+
 $hash_cost_log2 = 8;
 
 $hash_portable = FALSE;
@@ -40,8 +42,10 @@ $hasher = new PasswordHash($hash_cost_log2, $hash_portable);
 
 if ($hasher->CheckPassword($password, $res))
 {
-        unset($hasher);
-        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Login+Succeeded");
+       unset($hasher);
+	$_SESSION['valid'] = true;
+	$_SESSION['timeout'] = time();
+        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/BirdSim.php");
         exit();
 }
 
