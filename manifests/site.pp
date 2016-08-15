@@ -9,13 +9,13 @@ node ip-10-0-3-232 {
 
 node ip-10-0-3-70 {
 		include sshd
-		include apache
+		include apache-agent1
 		include php
 }
 
 node ip-10-0-3-42 {
 		include sshd
-		include apache
+		include apache-agent2
 		include php
 
 		include user-stevev
