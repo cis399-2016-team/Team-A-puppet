@@ -27,6 +27,14 @@ class php {
                 require => File["/var/www/html"],
         }
 
+	file { "/var/www/html/logout.php":
+		mode => 644,
+		owner => root,
+		group => root,
+		source => "puppet:///modules/php/logout.php",
+		require => File["/var/www/html"],
+	}	
+
 	file {"/var/www/html/phpass-0.3":
 		ensure => 'directory',
 		mode => 644,
