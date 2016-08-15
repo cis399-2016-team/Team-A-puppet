@@ -45,7 +45,7 @@ if ($hasher->CheckPassword($password, $res))
        unset($hasher);
 	$_SESSION['valid'] = true;
 	$_SESSION['timeout'] = time();
-        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/BirdSim.php");
+        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/BirdSim.html");
         exit();
 }
 
