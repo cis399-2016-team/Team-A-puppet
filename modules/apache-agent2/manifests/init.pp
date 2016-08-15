@@ -1,4 +1,4 @@
-class apache {
+class apache-agent2 {
 	package {
 		"apache2": ensure => installed;
 	}
