@@ -13,16 +13,17 @@
     	{
         	session_regenerate_id(true);
         	$_SESSION['timeout'] = time();
-    	}
-	}
 
 	?>
-		<applet code="BirdSimPackage/Main.class" 
-	   			archive="BirdSim.jar"
-           		height=600 width=900> 
-   		</applet>
+			<applet code="BirdSimPackage/Main.class" 
+	   				archive="BirdSim.jar"
+           			height=600 width=900> 
+   			</applet>
 
 	<?php
+
+		}
+	}
 
 	else
     {	
