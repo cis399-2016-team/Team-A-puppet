@@ -9,11 +9,12 @@ $hash_portable = FALSE;
 
 $username = $_POST['user'];
 $password = $_POST['pass'];
+$password2 = $_POST['pass2'];
 
-if (count($argv) == 3)
+if (strcmp($password, $password2) != 0)
 {
-	$username = $argv[1];
-	$password = $argv[2];
+        header("Location: http://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/login.php?msg=Error password reentry did not match");
+        exit();
 }
 
 if (strlen($password) < 10)
