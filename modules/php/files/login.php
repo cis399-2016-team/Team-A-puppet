@@ -30,5 +30,7 @@ Retype Password:<br>
 <input type="submit" value="Create Account">
 </form>
 
+<a href="https://github.com/cis399-2016-team/Team-A-puppet/issues">Account Issue Report</a>
+<a href="https://github.com/VanDeniz/BirdSim/issues">Game Bug Report</a>
 </body>
 </html>
