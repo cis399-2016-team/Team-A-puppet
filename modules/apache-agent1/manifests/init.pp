@@ -7,7 +7,7 @@ class apache-agent1 {
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet:///modules/apache/apache2.conf",
+		source => "puppet:///modules/apache-agent1/apache2.conf",
 		require => Package["apache2"],
 	}
 
@@ -22,7 +22,7 @@ class apache-agent1 {
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet:///modules/apache/foo.html",
+		source => "puppet:///modules/apache-agent1/foo.html",
 		require => File["/var/www/html"],
 	}
 
@@ -30,7 +30,7 @@ class apache-agent1 {
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet:///modules/apache/default-ssl.conf",
+		source => "puppet:///modules/apache-agent1/default-ssl.conf",
 		require => Package["apache2"],
 	}
 
@@ -38,7 +38,7 @@ class apache-agent1 {
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet:///modules/apache/BirdSim.jar",
+		source => "puppet:///modules/apache-agent1/BirdSim.jar",
 		require => File["/var/www/html"],
 	}
 
@@ -46,7 +46,7 @@ class apache-agent1 {
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet:///modules/apache/BirdSim.html",
+		source => "puppet:///modules/apache-agent1/BirdSim.html",
 		require => File["/var/www/html"],
 	}
 
@@ -54,7 +54,7 @@ class apache-agent1 {
 		mode => 644,
 		owner => root,
 		group => root,
-		source => "puppet:///modules/apache/resources.tar",
+		source => "puppet:///modules/apache-agent1/resources.tar",
 		require => File["/var/www/html"],
 		before => Exec["untar"],
 	}
